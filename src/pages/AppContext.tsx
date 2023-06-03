@@ -9,7 +9,7 @@ function Context({ children }: any) {
   });
 
   return (
-    <Color_data.Provider value={{ colors, setColors }}>
+    <Color_data.Provider value={{ colors, setColors } as any}>
       {children}
     </Color_data.Provider>
   );
