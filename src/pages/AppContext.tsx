@@ -8,17 +8,9 @@ function Context({ children }: any) {
     color2: "#FDF1E0",
   });
 
-  useEffect(() => {
-    
-  }, []);
-
   return (
     <Color_data.Provider value={{ colors, setColors } as any}>
-      <div
-        className={`bg-gradient-to-bl from-[${colors.color1}] to-[${colors.color2}]`}
-      >
-        {children}
-      </div>
+      {children}
     </Color_data.Provider>
   );
 }

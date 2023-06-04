@@ -14,10 +14,15 @@ const Profile = () => {
   const { colors } = useContext<any>(Color_data);
   const router = useRouter();
 
+  
+
   return (
     <>
       <div
         className={`py-4 w-[100vw] h-[100vh]`}
+        style={{
+          background: `linear-gradient(to bottom left, ${colors.color1}, ${colors.color2})`,
+        }}
       >
         <div className="max-w-screen-sm mx-auto">
           <div className="mx-2 mb-4 flex">

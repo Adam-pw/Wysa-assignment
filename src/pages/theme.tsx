@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import { Color_data } from "./AppContext";
 
 export default function Theme() {
-  const [click, setClick] = useState<any>();
+  const [click, setClick] = useState<any>("Default");
   const { color, setColors } = useContext<any>(Color_data);
   const { colors } = useContext<any>(Color_data);
   const [input, setInput] = useState<any>({
@@ -11,16 +11,15 @@ export default function Theme() {
     color2: "",
   });
   const handleClick = (e: any) => {
-    // e.preventDefault();
-    // console.log(input);
+    e.preventDefault();
+    console.log(input);
+    setClick("");
     setColors(input);
-    // console.log(colors);
+    console.log(colors);
   };
   return (
     <>
-      <div
-        className={`py-4 w-[100vw] h-[100vh]`}
-      >
+      <div className={`py-4 w-[100vw] h-[100vh]`} style={{ background: `linear-gradient(to bottom left, ${colors.color1}, ${colors.color2})` }}>
         <div className="max-w-screen-sm mx-auto">
           <div className="mx-2 mb-4 flex">
             <Link href="/">

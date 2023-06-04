@@ -25,14 +25,21 @@ const Login = () => {
           router.push("/");
         }
       );
-    } else {
-      router.push("/");
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      router.push("/");
+    }
+  }, [router, user]);
 
   return (
     <div
       className={`py-4 w-[100vw] h-[100vh]`}
+      style={{
+        background: `linear-gradient(to bottom left, ${colors.color1}, ${colors.color2})`,
+      }}
     >
       <div className="flex justify-around items-center py-40">
         <div className="flex flex-col items-center gap-2">

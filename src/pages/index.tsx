@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Color_data } from "./AppContext";
 import { auth } from "@/firebsae";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -19,13 +19,17 @@ export default function Home() {
       router.push("/signin");
     }
   }, [router, user]);
+
   return (
     <>
       <div
         className={`py-4 w-[100vw] h-[100vh]`}
+        style={{
+          background: `linear-gradient(to bottom left, ${colors.color1}, ${colors.color2})`,
+        }}
       >
         <div className="max-w-screen-sm mx-auto flex flex-col justify-between">
-          <div className="h-[92vh]">
+          <div className="h-[92vh] overflow-y-scroll">
             <div className="mx-2 my-4 flex gap-2 justify-between">
               <Link href="/profile">
                 <button className="bg-white/50 px-4 py-2 rounded-2xl flex gap-2 items-center">

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { createUserWithEmailAndPassword } from "firebase/auth";
@@ -19,6 +19,12 @@ const Signin = () => {
     password: "",
   });
 
+  useEffect(() => {
+    if (user) {
+      router.push("/");
+    }
+  }, [router, user]);
+
   const handleClick = (e: any) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, UserSign.email, UserSign.password)
@@ -31,7 +37,7 @@ const Signin = () => {
       .then(() => {
         router.push("/");
       })
-      .catch((error) => {
+      .catch((error: any) => {
         console.log(error);
       });
   };
@@ -39,6 +45,9 @@ const Signin = () => {
   return (
     <div
       className={`py-4 w-[100vw] h-[100vh]`}
+      style={{
+        background: `linear-gradient(to bottom left, ${colors.color1}, ${colors.color2})`,
+      }}
     >
       <div className="flex justify-around items-center py-28">
         <div className="flex flex-col items-center gap-2">
