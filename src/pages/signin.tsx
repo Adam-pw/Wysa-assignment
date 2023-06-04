@@ -38,7 +38,7 @@ const Signin = () => {
 
   return (
     <div
-      className={`bg-gradient-to-bl py-4 from-[${colors.color1}] to-[${colors.color2}] w-[100vw] h-[100vh]`}
+      className={`py-4 w-[100vw] h-[100vh]`}
     >
       <div className="flex justify-around items-center py-28">
         <div className="flex flex-col items-center gap-2">

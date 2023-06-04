@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <>
       <div
-        className={`bg-gradient-to-bl py-4 from-[${colors.color1}] to-[${colors.color2}] w-[100vw] h-[100vh]`}
+        className={`py-4 w-[100vw] h-[100vh]`}
       >
         <div className="max-w-screen-sm mx-auto flex flex-col justify-between">
           <div className="h-[92vh]">

@@ -17,7 +17,7 @@ const Profile = () => {
   return (
     <>
       <div
-        className={`bg-gradient-to-bl py-4 from-[${colors.color1}] to-[${colors.color2}] w-[100vw] h-[100vh]`}
+        className={`py-4 w-[100vw] h-[100vh]`}
       >
         <div className="max-w-screen-sm mx-auto">
           <div className="mx-2 mb-4 flex">
